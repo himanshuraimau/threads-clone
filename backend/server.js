@@ -1,4 +1,3 @@
-import path from "path";
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db/connectDB.js";
@@ -13,9 +12,10 @@ import userRoutes from "./routes/userRoutes.js";
 dotenv.config();
 
 connectDB();
-//job.start();
 
-//const PORT = process.env.PORT || 5000;
+const app = express(); // Define express app
+const PORT = process.env.PORT || 5000; // Define port
+
 //const __dirname = path.resolve();
 
 /*cloudinary.config({
@@ -45,4 +45,4 @@ app.use("/api/users", userRoutes);
 	});
 }
 */
-server.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`)); // Start server on defined port
