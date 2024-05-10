@@ -15,9 +15,10 @@ function App() {
     <Container maxW='620px'>
       <Header/>
       <Routes>
-    
+      <Route path='/' element={user ? <HomePage /> :<Navigate to='/auth' />} />
+      <Route path='/auth' element={!user ? <AuthPage/> : <Navigate to='/' />} />
         <Route path='/:username' element={<UserPage/>} />
-        <Route path='/auth' element={<AuthPage/>} />
+        
        
       </Routes>
     </Container>
