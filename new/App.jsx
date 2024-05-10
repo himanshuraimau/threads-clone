@@ -2,12 +2,12 @@ import './App.css';
 import { Container } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
 import {UserPage} from './pages/UserPage.jsx';
-//import PostPage from './pages/PostPage.jsx';
+//import {PostPage} from './pages/PostPage.jsx';
 import {Header} from './components/Header.jsx';
 import AuthPage from './pages/AuthPage.jsx';
 import { use } from 'moongose/routes/users.js';
 import { useRecoilValue } from 'recoil';
-import userAtom  from './atoms/userAtom.jsx';
+import { userAtom } from './atoms/userAtom.js';
 import  HomePage  from './pages/HomePage.jsx';
 
 function App() {
