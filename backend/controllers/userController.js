@@ -2,7 +2,7 @@ import User from "../models/userModel.js";
 import Post from "../models/postModel.js";
 import bcrypt from "bcryptjs";
 import generateTokenAndSetCookie from "../utils/generateTokenAndSetCookie.js";
-//import { v2 as cloudinary } from "cloudinary";
+import { v2 as cloudinary } from "cloudinary";
 import mongoose from "mongoose";
 
 const getUserProfile = async (req, res) => {
@@ -58,7 +58,7 @@ const signupUser = async (req, res) => {
 				email: newUser.email,
 				username: newUser.username,
 				bio: newUser.bio,
-				//profilePic: newUser.profilePic,
+				profilePic: newUser.profilePic,
 			});
 	} 
    }catch (err) {

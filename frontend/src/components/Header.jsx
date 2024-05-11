@@ -1,6 +1,5 @@
 import { Button, Flex, Image, Link, useColorMode } from "@chakra-ui/react";
-
-export const Header = () => {
+const Header = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
         <Flex justifyContent={"center"} mt={6} mb='12'>
@@ -19,3 +18,4 @@ export const Header = () => {
      
     )
 }
+export default Header;

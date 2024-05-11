@@ -1,11 +1,21 @@
-import { Box,VStack } from "@chakra-ui/react"
+import { Avatar } from "@chakra-ui/avatar";
+import { Box, Flex, Link, Text, VStack } from "@chakra-ui/layout";
+import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu";
+import { Portal } from "@chakra-ui/portal";
+import { Button, useToast } from "@chakra-ui/react";
+import { BsInstagram } from "react-icons/bs";
+import { CgMoreO } from "react-icons/cg";
+import { useRecoilValue } from "recoil";
+import userAtom from "../atoms/userAtom";
+import { Link as RouterLink } from "react-router-dom";
+import useFollowUnfollow from "../hooks/useFollowUnfollow";
 
 export const UserHeader = ({ user }) => {
 	const toast = useToast();
-	
+	const currentUser = useRecoilValue(userAtom); // logged in user
+	const { handleFollowUnfollow, following, updating } = useFollowUnfollow(user);
 
-
-   const copyURL = () => {
+	const copyURL = () => {
 		const currentURL = window.location.href;
 		navigator.clipboard.writeText(currentURL).then(() => {
 			toast({
@@ -17,7 +27,7 @@ export const UserHeader = ({ user }) => {
 			});
 		});
 	};
-	
+
 	return (
 		<VStack gap={4} alignItems={"start"}>
 			<Flex justifyContent={"space-between"} w={"full"}>
