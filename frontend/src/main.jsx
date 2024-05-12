@@ -8,7 +8,7 @@ import { extendTheme } from "@chakra-ui/theme-utils";
 import { ColorModeScript } from "@chakra-ui/color-mode";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-
+import { SocketContextProvider } from "./context/SocketContext.jsx";
 
 const styles = {
 	global: (props) => ({
@@ -21,7 +21,7 @@ const styles = {
 
 const config = {
 	initialColorMode: "dark",
-	useSystemColorMode: false,
+	useSystemColorMode: true,
 };
 
 const colors = {
@@ -36,16 +36,15 @@ const theme = extendTheme({ config, styles, colors });
 ReactDOM.createRoot(document.getElementById("root")).render(
 	// React.StrictMode renders every component twice (in the initial render), only in development.
 	<React.StrictMode>
-		    <RecoilRoot>
+		<RecoilRoot>
 			<BrowserRouter>
 				<ChakraProvider theme={theme}>
 					<ColorModeScript initialColorMode={theme.config.initialColorMode} />
-					
+					<SocketContextProvider>
 						<App />
-					
+					</SocketContextProvider>
 				</ChakraProvider>
 			</BrowserRouter>
-			</RecoilRoot>
-		
+		</RecoilRoot>
 	</React.StrictMode>
 );

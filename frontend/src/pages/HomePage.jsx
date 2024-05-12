@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import useShowToast from "../hooks/useShowToast";
 import Post from "../components/Post";
 import { useRecoilState } from "recoil";
-import postsAtom from "../atoms/postsAtom.js";
-//import SuggestedUsers from "../components/SuggestedUsers";
+import postsAtom from "../atoms/postsAtom";
+import SuggestedUsers from "../components/SuggestedUsers";
 
 const HomePage = () => {
 	const [posts, setPosts] = useRecoilState(postsAtom);
@@ -54,7 +54,8 @@ const HomePage = () => {
 					md: "block",
 				}}
 			>
-						</Box>
+				<SuggestedUsers />
+			</Box>
 		</Flex>
 	);
 };
