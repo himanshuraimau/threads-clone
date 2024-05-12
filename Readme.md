@@ -1,6 +1,6 @@
 # A FULL STACK THREADS APP CLONE
 
-![Live Link](https://threads-clone-1-f4ch.onrender.com/auth)
+[Live Link](https://threads-clone-1-f4ch.onrender.com/auth)
 
 
 Feature List:
